@@ -1,5 +1,7 @@
 package bridge.view;
 
+import bridge.consts.Key;
+
 /**
  * 사용자에게 게임 진행 상황과 결과를 출력하는 역할을 한다.
  */
@@ -18,6 +20,14 @@ public class OutputView {
      */
     public void printEnterBridgeLength() {
         System.out.println("다리의 길이를 입력해주세요.");
+    }
+
+    /**
+     * 이동할 칸 선택 문구 출력
+     */
+    public void printSelectMoving() {
+        System.out.println();
+        System.out.printf("이동할 칸을 선택해주세요. (위: %s, 아래: %s)\n", Key.MOVING_UP, Key.MOVING_DOWN);
     }
 
     /**
