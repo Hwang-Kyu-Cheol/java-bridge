@@ -14,12 +14,12 @@ class InputResolverTest {
 
     @DisplayName("유효한 다리 길이일 경우, 다리 길이를 int로 반환합니다.")
     @Test
-    void isValidBridgeLength() {
+    void isValidBridgeSize() {
         //given
         String input = "10";
 
         //when
-        int bridgeLength = inputResolver.resolveBridgeLength(input);
+        int bridgeLength = inputResolver.resolveBridgeSize(input);
 
         //then
         assertThat(bridgeLength).isEqualTo(10);
@@ -27,12 +27,12 @@ class InputResolverTest {
 
     @DisplayName("유효하지 않은 다리 길이일 경우, 예외가 발생합니다.")
     @Test
-    void isInvalidBridgeLength() {
+    void isInvalidBridgeSize() {
         //given
         String input = "1j";
 
         //when & then
-        assertThatThrownBy(() -> inputResolver.resolveBridgeLength(input))
+        assertThatThrownBy(() -> inputResolver.resolveBridgeSize(input))
                 .isInstanceOf(IllegalArgumentException.class);
 
     }

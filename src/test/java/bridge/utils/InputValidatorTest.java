@@ -13,47 +13,47 @@ class InputValidatorTest {
 
     @DisplayName("유효한 다리 길이일 경우, 예외가 발생하지 않습니다.")
     @Test
-    void isValidBridgeLength() {
+    void isValidBridgeSize() {
         //given
         String input = "15";
 
         //when & then
-        assertDoesNotThrow(() -> inputValidator.validateBridgeLength(input));
+        assertDoesNotThrow(() -> inputValidator.validateBridgeSize(input));
     }
 
     @DisplayName("다리 길이가 null 일 경우, 예외가 발생합니다.")
     @Test
-    void isNullBridgeLength() {
+    void isNullBridgeSize() {
         //given
         String input = null;
 
         //when & then
-        assertThatThrownBy(() -> inputValidator.validateBridgeLength(input))
+        assertThatThrownBy(() -> inputValidator.validateBridgeSize(input))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
     @DisplayName("다리 길이가 숫자가 아닐 경우, 예외가 발생합니다.")
     @Test
-    void isNotNumberBridgeLength() {
+    void isNotNumberBridgeSize() {
         //given
         String input = "1a";
 
         //when & then
-        assertThatThrownBy(() -> inputValidator.validateBridgeLength(input))
+        assertThatThrownBy(() -> inputValidator.validateBridgeSize(input))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
     @DisplayName("다리 길이가 3 이상 20 이하가 아닐 경우, 예외가 발생합니다.")
     @Test
-    void isNotInRangeBridgeLength() {
+    void isNotInRangeBridgeSize() {
         //given
         String input1 = "2";
         String input2 = "21";
 
         //when & then
-        assertThatThrownBy(() -> inputValidator.validateBridgeLength(input1))
+        assertThatThrownBy(() -> inputValidator.validateBridgeSize(input1))
                 .isInstanceOf(IllegalArgumentException.class);
-        assertThatThrownBy(() -> inputValidator.validateBridgeLength(input2))
+        assertThatThrownBy(() -> inputValidator.validateBridgeSize(input2))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 

@@ -19,7 +19,7 @@ public class InputView {
      */
     public int readBridgeSize() {
         String input = Console.readLine();
-        return inputResolver.resolveBridgeLength(input);
+        return inputResolver.resolveBridgeSize(input);
     }
 
     /**

@@ -13,8 +13,8 @@ public class InputResolver {
      * @param input
      * @return int
      */
-    public int resolveBridgeLength(String input) {
-        inputValidator.validateBridgeLength(input);
+    public int resolveBridgeSize(String input) {
+        inputValidator.validateBridgeSize(input);
         return Integer.parseInt(input);
     }
 }
