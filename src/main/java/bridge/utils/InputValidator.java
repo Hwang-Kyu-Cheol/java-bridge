@@ -3,6 +3,16 @@ package bridge.utils;
 public class InputValidator {
 
     /**
+     * 입력받은 다리 길이가 유효한지 판단하는 메소드
+     * @param input
+     */
+    public void validateBridgeLength(String input) {
+        validateNull(input);
+        validateNumber(input);
+        validateRange(input);
+    }
+
+    /**
      * 입력이 null 인지 판단하는 메소드
      * @param input
      */
