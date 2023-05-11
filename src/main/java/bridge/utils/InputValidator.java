@@ -1,5 +1,7 @@
 package bridge.utils;
 
+import bridge.consts.Key;
+
 public class InputValidator {
 
     /**
@@ -41,6 +43,16 @@ public class InputValidator {
     private void validateRange(String input) {
         int number = Integer.parseInt(input);
         if (number < 3 || number > 20) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    /**
+     * 입력이 U, D인지 판단하는 메소드
+     * @param input
+     */
+    private void validateMovingKey(String input) {
+        if (!Key.MOVING_KEYS.contains(input)) {
             throw new IllegalArgumentException();
         }
     }
