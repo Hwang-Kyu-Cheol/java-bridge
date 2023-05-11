@@ -24,4 +24,14 @@ public class InputValidator {
         }
     }
 
+    /**
+     * 입력이 3 이상 20 이하 인지 판단하는 메소드
+     * @param input
+     */
+    private void validateRange(String input) {
+        int number = Integer.parseInt(input);
+        if (number < 3 || number > 20) {
+            throw new IllegalArgumentException();
+        }
+    }
 }
