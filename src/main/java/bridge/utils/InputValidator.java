@@ -8,4 +8,13 @@ public class InputValidator {
         }
         return false;
     }
+
+    private boolean isInteger(String input) {
+        try {
+            Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        return true;
+    }
 }
