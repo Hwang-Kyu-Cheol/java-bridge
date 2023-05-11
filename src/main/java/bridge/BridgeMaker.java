@@ -20,4 +20,16 @@ public class BridgeMaker {
     public List<String> makeBridge(int size) {
         return null;
     }
+
+    /**
+     * 다리 모양을 생성하는 메소드
+     * @return String
+     */
+    private String generateBridgeShape() {
+        int bridgeNumber = bridgeNumberGenerator.generate();
+        if (bridgeNumber == 0) {
+            return "D";
+        }
+        return "U";
+    }
 }
