@@ -15,6 +15,17 @@ public class InputValidator {
     }
 
     /**
+     * 입력받은 이동할 칸이 유효한지 판단하는 메소드
+     * @param input
+     */
+    public void validateMoving(String input) {
+        validateNull(input);
+        validateMovingKey(input);
+    }
+
+    /** 비즈니스 로직 ** /
+
+    /**
      * 입력이 null 인지 판단하는 메소드
      * @param input
      */

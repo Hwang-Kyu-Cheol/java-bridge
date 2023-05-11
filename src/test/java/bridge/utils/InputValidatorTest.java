@@ -57,4 +57,35 @@ class InputValidatorTest {
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
+    @DisplayName("유효한 이동할 칸인 경우, 예외가 발생하지 않습니다.")
+    @Test
+    void isValidMoving() {
+        //given
+        String input = "U";
+
+        //when & then
+        assertDoesNotThrow(() -> inputValidator.validateMoving(input));
+    }
+
+    @DisplayName("이동할 칸이 null 인 경우, 예외가 발생합니다.")
+    @Test
+    void isNullMoving() {
+        //given
+        String input = null;
+
+        //when & then
+        assertThatThrownBy(() -> inputValidator.validateMoving(input))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @DisplayName("이동할 칸이 U, D가 아닌 경우, 예외가 발생합니다.")
+    @Test
+    void isInvalidMoving() {
+        //given
+        String input = "R";
+
+        //when & then
+        assertThatThrownBy(() -> inputValidator.validateMoving(input))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
