@@ -2,6 +2,8 @@ package bridge.view;
 
 import bridge.consts.Key;
 
+import java.util.List;
+
 /**
  * 사용자에게 게임 진행 상황과 결과를 출력하는 역할을 한다.
  */
@@ -35,7 +37,46 @@ public class OutputView {
      * <p>
      * 출력을 위해 필요한 메서드의 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
-    public void printMap() {
+    public void printMap(List<String> bridge, List<String> user) {
+        printMap(bridge, user, "U");
+        printMap(bridge, user, "D");
+    }
+
+    /**
+     * key 방향의 현재까지 이동한 다리 출력
+     * @param bridge
+     * @param user
+     * @param key
+     */
+    private void printMap(List<String> bridge, List<String> user, String key) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("[ ");
+        for (int i = 0; i < user.size(); i++) {
+            String block = generateBlock(bridge.get(i), user.get(i), key);
+            stringBuilder.append(block);
+            if (i < user.size() - 1) {
+                stringBuilder.append(" | ");
+            }
+        }
+        stringBuilder.append(" ]");
+        System.out.println(stringBuilder);
+    }
+
+    /**
+     * key 방향의 현재 위치에서, 다리와 사용자 움직임을 비교해서 문자열을 반환하는 메소드
+     * @param answer
+     * @param moving
+     * @param key
+     * @return String
+     */
+    private String generateBlock(String answer, String moving, String key) {
+        if (key.equals(moving)) {
+            if (moving.equals(answer)) {
+                return "O";
+            }
+            return "X";
+        }
+        return " ";
     }
 
     /**
