@@ -17,4 +17,14 @@ public class InputResolver {
         inputValidator.validateBridgeSize(input);
         return Integer.parseInt(input);
     }
+
+    /**
+     * 입력받은 이동할 칸을 String으로 변환하는 메소드
+     * @param input
+     * @return String
+     */
+    public String resolveMoving(String input) {
+        inputValidator.validateMoving(input);
+        return input;
+    }
 }
