@@ -88,4 +88,37 @@ class InputValidatorTest {
         assertThatThrownBy(() -> inputValidator.validateMoving(input))
                 .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @DisplayName("유효한 재시도 입력일 경우, 예외가 발생하지 않습니다.")
+    @Test
+    void isValidGameCommand() {
+        //given
+        String input = "R";
+
+        //when & then
+        assertDoesNotThrow(() -> inputValidator.validateGameCommand(input));
+    }
+
+    @DisplayName("재시도 입력이 null 일 경우, 예외가 발생합니다.")
+    @Test
+    void isInvalidGameCommand() {
+        //given
+        String input = "P";
+
+        //when & then
+        assertThatThrownBy(() -> inputValidator.validateGameCommand(input))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @DisplayName("재시도 입력이 R, Q가 아닐 경우, 예외가 발생합니다.")
+    @Test
+    void isNullGameCommand() {
+        //given
+        String input = null;
+
+        //when & then
+        assertThatThrownBy(() -> inputValidator.validateGameCommand(input))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
 }

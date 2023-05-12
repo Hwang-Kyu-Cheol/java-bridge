@@ -24,6 +24,15 @@ public class InputValidator {
         validateMovingKey(input);
     }
 
+    /**
+     * 입력받은 게임 재시도 선택이 유효한지 판단하는 메소드
+     * @param input
+     */
+    public void validateGameCommand(String input) {
+        validateNull(input);
+        validateGameCommandKey(input);
+    }
+
     /** 비즈니스 로직 ** /
 
     /**
