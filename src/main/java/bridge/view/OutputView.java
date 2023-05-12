@@ -1,7 +1,7 @@
 package bridge.view;
 
-import bridge.consts.Command;
-import bridge.consts.Key;
+import bridge.consts.GameCommand;
+import bridge.consts.Moving;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class OutputView {
     /**
      * 다리 길이 입력 문구 출력
      */
-    public void printEnterBridgeLength() {
+    public void printEnterBridgeSize() {
         System.out.println("다리의 길이를 입력해주세요.");
     }
 
@@ -30,7 +30,7 @@ public class OutputView {
      */
     public void printSelectMoving() {
         System.out.println();
-        System.out.printf("이동할 칸을 선택해주세요. (위: %s, 아래: %s)\n", Key.MOVING_UP, Key.MOVING_DOWN);
+        System.out.printf("이동할 칸을 선택해주세요. (위: %s, 아래: %s)\n", Moving.UP, Moving.DOWN);
     }
 
     /**
@@ -46,8 +46,8 @@ public class OutputView {
     /**
      * 게임 재시도 선택 문구 출력
      */
-    public void printSelectRetry() {
-        System.out.printf("게임을 다시 시도할지 여부를 입력해주세요. (재시도: %s, 종료: %s)", Command.RETRY, Command.QUIT);
+    public void printSelectGameCommand() {
+        System.out.printf("게임을 다시 시도할지 여부를 입력해주세요. (재시도: %s, 종료: %s)", GameCommand.RETRY, GameCommand.QUIT);
     }
 
     /**

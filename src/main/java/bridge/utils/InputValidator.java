@@ -1,7 +1,7 @@
 package bridge.utils;
 
-import bridge.consts.Command;
-import bridge.consts.Key;
+import bridge.consts.GameCommand;
+import bridge.consts.Moving;
 
 public class InputValidator {
 
@@ -64,7 +64,7 @@ public class InputValidator {
      * @param input
      */
     private void validateMovingKey(String input) {
-        if (!Key.MOVING_KEYS.contains(input)) {
+        if (!Moving.MOVINGS.contains(input)) {
             throw new IllegalArgumentException();
         }
     }
@@ -73,8 +73,8 @@ public class InputValidator {
      * 입력이 R, Q인지 판단하는 메소드
      * @param input
      */
-    private void validateRetryCommand(String input) {
-        if (!Command.COMMANDS.contains(input)) {
+    private void validateGameCommandKey(String input) {
+        if (!GameCommand.COMMANDS.contains(input)) {
             throw new IllegalArgumentException();
         }
     }
