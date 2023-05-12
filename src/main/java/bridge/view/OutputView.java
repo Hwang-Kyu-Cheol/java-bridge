@@ -1,5 +1,6 @@
 package bridge.view;
 
+import bridge.consts.Command;
 import bridge.consts.Key;
 
 import java.util.List;
@@ -40,6 +41,13 @@ public class OutputView {
     public void printMap(List<String> bridge, List<String> user) {
         printMap(bridge, user, "U");
         printMap(bridge, user, "D");
+    }
+
+    /**
+     * 게임 재시도 선택 문구 출력
+     */
+    public void printSelectRetry() {
+        System.out.printf("게임을 다시 시도할지 여부를 입력해주세요. (재시도: %s, 종료: %s)", Command.RETRY, Command.QUIT);
     }
 
     /**
