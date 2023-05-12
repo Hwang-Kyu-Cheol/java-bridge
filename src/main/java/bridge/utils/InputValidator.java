@@ -1,5 +1,6 @@
 package bridge.utils;
 
+import bridge.consts.Command;
 import bridge.consts.Key;
 
 public class InputValidator {
@@ -64,6 +65,16 @@ public class InputValidator {
      */
     private void validateMovingKey(String input) {
         if (!Key.MOVING_KEYS.contains(input)) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    /**
+     * 입력이 R, Q인지 판단하는 메소드
+     * @param input
+     */
+    private void validateRetryCommand(String input) {
+        if (!Command.COMMANDS.contains(input)) {
             throw new IllegalArgumentException();
         }
     }
