@@ -41,14 +41,30 @@ public class OutputView {
     public void printMap(List<String> bridge, List<String> user) {
         printMap(bridge, user, "U");
         printMap(bridge, user, "D");
+        System.out.println();
     }
 
     /**
      * 게임 재시도 선택 문구 출력
      */
     public void printSelectGameCommand() {
-        System.out.printf("게임을 다시 시도할지 여부를 입력해주세요. (재시도: %s, 종료: %s)", GameCommand.RETRY, GameCommand.QUIT);
+        System.out.printf("게임을 다시 시도할지 여부를 입력해주세요. (재시도: %s, 종료: %s)\n", GameCommand.RETRY, GameCommand.QUIT);
     }
+
+    /**
+     * 게임의 최종 결과를 정해진 형식에 맞춰 출력한다.
+     * <p>
+     * 출력을 위해 필요한 메서드의 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
+     */
+    public void printResult(List<String> bridge, List<String> user, boolean isSuccess, int tryCount) {
+        System.out.println("최종 게임 결과");
+        printMap(bridge, user);
+        System.out.println();
+        printIsSuccess(isSuccess);
+        printTryCount(tryCount);
+    }
+
+    /** 비즈니스 로직 **/
 
     /**
      * key 방향의 현재까지 이동한 다리 출력
@@ -88,10 +104,23 @@ public class OutputView {
     }
 
     /**
-     * 게임의 최종 결과를 정해진 형식에 맞춰 출력한다.
-     * <p>
-     * 출력을 위해 필요한 메서드의 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
+     * 게임 성공 여부 출력
+     * @param isSuccess
      */
-    public void printResult() {
+    private void printIsSuccess(boolean isSuccess) {
+        System.out.print("게임 성공 여부: ");
+        if (isSuccess) {
+            System.out.println("성공");
+            return;
+        }
+        System.out.println("실패");
+    }
+
+    /**
+     * 총 시도 횟수 출력
+     * @param tryCount
+     */
+    private void printTryCount(int tryCount) {
+        System.out.printf("총 시도한 횟수: %d\n", tryCount);
     }
 }
