@@ -27,4 +27,14 @@ public class InputResolver {
         inputValidator.validateMoving(input);
         return input;
     }
+
+    /**
+     * 입력받은 게임 재시도 선택을 String으로 변환하는 메소드
+     * @param input
+     * @return
+     */
+    public String resolveGameCommand(String input) {
+        inputValidator.validateGameCommand(input);
+        return input;
+    }
 }
