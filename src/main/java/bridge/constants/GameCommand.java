@@ -1,4 +1,4 @@
-package bridge.consts;
+package bridge.constants;
 
 import java.util.List;
 

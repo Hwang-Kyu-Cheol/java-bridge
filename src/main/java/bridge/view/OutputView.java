@@ -1,7 +1,7 @@
 package bridge.view;
 
-import bridge.consts.GameCommand;
-import bridge.consts.Moving;
+import bridge.constants.GameCommand;
+import bridge.constants.Moving;
 
 import java.util.List;
 
@@ -15,7 +15,6 @@ public class OutputView {
      */
     public void printStartBridgeGame() {
         System.out.println("다리 건너기 게임을 시작합니다.");
-        System.out.println();
     }
 
     /**
@@ -29,7 +28,6 @@ public class OutputView {
      * 이동할 칸 선택 문구 출력
      */
     public void printSelectMoving() {
-        System.out.println();
         System.out.printf("이동할 칸을 선택해주세요. (위: %s, 아래: %s)\n", Moving.UP, Moving.DOWN);
     }
 
@@ -59,9 +57,12 @@ public class OutputView {
     public void printResult(List<String> bridge, List<String> user, boolean isSuccess, int tryCount) {
         System.out.println("최종 게임 결과");
         printMap(bridge, user);
-        System.out.println();
         printIsSuccess(isSuccess);
         printTryCount(tryCount);
+    }
+
+    public void printBlank() {
+        System.out.println();
     }
 
     /** 비즈니스 로직 **/

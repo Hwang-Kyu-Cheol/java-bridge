@@ -1,7 +1,7 @@
 package bridge.utils;
 
-import bridge.consts.GameCommand;
-import bridge.consts.Moving;
+import bridge.constants.GameCommand;
+import bridge.constants.Moving;
 
 public class InputValidator {
 
